@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Linear Interpolation/Extrapolation Divided Difference</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css'>
+  <link href="css/style.css" rel="stylesheet" />
+
+</head>
+<body>
+
+<div class="container">
+	<div class="header">
+		<h2>Linear Divided Difference Calculator</h2>
+	</div>
+	<center>
+		<form id="form" class="form">
+			<div class="form-control">
+				<label for="x">Please input unknown value</label>
+				<input type="number" placeholder="x" id="x" step="any" required />
+			</div>
+			<div class="form-control">
+				<label for="x">Please input x0 value</label>
+				<input type="number" placeholder="x0" id="x0" step="any" required/>
+			</div>
+			<div class="form-control">
+				<label for="x">Please input x1 value</label>
+				<input type="number" placeholder="x1" id="x1" step="any" required/>
+			</div>	
+				<div class="form-control">
+					<label for="x">Please input y0 value</label>
+					<input type="number" placeholder="y0" id="y0"  step="any" required/>
+				</div>
+				<div class="form-control">
+					<label for="x">Please input y1 value</label>
+					<input type="number" placeholder="y1" id="y1"  step="any"required/>
+				</div>
+
+			<button>Submit</button>
+			
+		</form>
+	</center>
+	
+</div>
+
+<a href="index.html"class="floating-btn"> Go Back to Main Menu</a>
+
+  <script>
+
+//x values
+
+var x;
+var x0; 
+var x1;
+
+
+//y values 
+
+var y0;
+var y1;
+
+function solve()
+
+{
+
+	 
+
+	  const b = (y1-y0)/(x1-x0);
+	 
+
+	  const main_formula = y0 + b*(x-x0);
+
+
+
+	
+
+
+		alert("a="+y0+"\n"+"b="+b+"\n"+"Answer="+main_formula);
+	
+
+
+		
+}
+
+
+document.getElementById('form').addEventListener('submit', e => {
+	
+//x values
+ x = parseFloat(document.getElementById('x').value); 
+ x0 = parseFloat(document.getElementById('x0').value); 
+ x1 = parseFloat(document.getElementById('x1').value); 
+ 
+
+
+//y values 
+
+ y0 = parseFloat(document.getElementById('y0').value);
+ y1= parseFloat(document.getElementById('y1').value);
+ 
+
+
+	e.preventDefault();
+
+	solve(); 
+
+	
+});
+
+
+  </script>
+
+
+</body>
+</html>
